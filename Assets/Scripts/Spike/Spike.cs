@@ -16,6 +16,8 @@ public class Spike : MonoBehaviour
     public float timeRemaining = 5;
     public int spikeSpeed; // variable to get random spike speeds
 
+    
+
     private void Awake()
     {
         powerUpController = GetComponent<PowerUpController>(); 
@@ -29,10 +31,12 @@ public class Spike : MonoBehaviour
 
         rb2.velocity = new Vector2(0, -spikeSpeed);
 
+        
     }
 
     private void Update()
     {
+
         //this can be another method in future, in PowerUpController
         if (playerMove.powerUpActive && !isSlowed)
         {
@@ -68,5 +72,7 @@ public class Spike : MonoBehaviour
             Destroy(gameObject);   
         }
     }
+
+    
 
 }
