@@ -53,19 +53,24 @@ public class PlayerMove : MonoBehaviour
             LivesManager.lives -= 1;
         }
 
+        
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
         if (collision.gameObject.tag == "SlowSpike")
-        { 
+        {
             powerUpActive = true;
             Destroy(collision.gameObject);
         }
 
-        if(collision.gameObject.tag == "Barrier")
+        if (collision.gameObject.tag == "Barrier")
         {
             barrierPowerUpActive = true;
             Destroy(collision.gameObject);
         }
 
-        if(collision.gameObject.tag == "ExtraLife")
+        if (collision.gameObject.tag == "ExtraLife")
         {
             LivesManager.lives += 1;
             Destroy(collision.gameObject);

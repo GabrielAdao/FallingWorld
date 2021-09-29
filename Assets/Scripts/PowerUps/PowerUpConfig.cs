@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class ExtraLifeSpawner : MonoBehaviour
+public class PowerUpConfig : MonoBehaviour
 {
     public GameObject powerUpPrefab;
     public Rigidbody2D rb2;
@@ -11,9 +11,7 @@ public class ExtraLifeSpawner : MonoBehaviour
 
     public int powerUpSpeed;
     public bool isActive = false;
-
-
-    private void Start()
+    void Start()
     {
         powerUpPosition = transform.position;
 
@@ -22,20 +20,11 @@ public class ExtraLifeSpawner : MonoBehaviour
         rb2.velocity = new Vector2(0, -powerUpSpeed);
     }
 
-    private void Update()
-    {
-        if (ScoreController.score == 12 && isActive == false)
-        {
-            isActive = true;
-            Instantiate(powerUpPrefab, powerUpPosition, transform.localRotation);
-        }
-    }
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Floor"))
         {
-            Destroy(this.gameObject);
+            Destroy(gameObject);
         }
     }
 }

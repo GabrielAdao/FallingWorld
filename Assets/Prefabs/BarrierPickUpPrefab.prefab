@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6724575611761175197}
   - component: {fileID: 2764349141256416587}
   - component: {fileID: 1823235720540532172}
+  - component: {fileID: 158075537652857089}
   m_Layer: 0
   m_Name: BarrierPickUpPrefab
   m_TagString: Barrier
@@ -27,7 +28,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4700507121311389740}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.053, y: -0.88703644, z: -1.8450665}
+  m_LocalPosition: {x: -0.82, y: 4.59999, z: 0}
   m_LocalScale: {x: 0.5, y: 0.5, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -99,7 +100,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDrag: 0
   m_AngularDrag: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 0
   m_Material: {fileID: 0}
   m_Interpolate: 0
   m_SleepingMode: 1
@@ -115,7 +116,7 @@ BoxCollider2D:
   m_Enabled: 1
   m_Density: 1
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0.00000017881393, y: -0.00000011920929}
@@ -131,3 +132,21 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.1157497, y: 1.0975001}
   m_EdgeRadius: 0
+--- !u!114 &158075537652857089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4700507121311389740}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bd1bbd7be249aa043846fad099c3dc27, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  powerUpPrefab: {fileID: 4700507121311389740}
+  rb2: {fileID: 2764349141256416587}
+  powerUpVel: {x: 0, y: 0}
+  powerUpPosition: {x: 0, y: 0}
+  powerUpSpeed: 0
+  isActive: 0

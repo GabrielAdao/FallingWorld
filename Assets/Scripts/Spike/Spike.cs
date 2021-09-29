@@ -30,8 +30,6 @@ public class Spike : MonoBehaviour
         spikeSpeed = Random.Range(2, 6);
 
         rb2.velocity = new Vector2(0, -spikeSpeed);
-
-        
     }
 
     private void Update()
