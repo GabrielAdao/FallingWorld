@@ -13,11 +13,8 @@ public class Spike : MonoBehaviour
     public PlayerMove playerMove;
 
     public bool isSlowed = false;
-    public float timeRemaining = 5;
+    public float timeRemaining;
     public int spikeSpeed; // variable to get random spike speeds
-
-    
-
     private void Awake()
     {
         powerUpController = GetComponent<PowerUpController>(); 
@@ -34,9 +31,7 @@ public class Spike : MonoBehaviour
 
     private void Update()
     {
-
-        //this can be another method in future, in PowerUpController
-        if (playerMove.powerUpActive && !isSlowed)
+        if (playerMove.powerUpActive)
         {
             if (timeRemaining > 0)
             {
@@ -47,9 +42,8 @@ public class Spike : MonoBehaviour
             }
             else
             {
-                isSlowed = false;
                 playerMove.powerUpActive = false;
-                rb2.velocity = new Vector2(0, -spikeSpeed);
+                Debug.Log(timeRemaining);
             }
         }
     }

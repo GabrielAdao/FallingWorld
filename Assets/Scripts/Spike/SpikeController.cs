@@ -26,7 +26,6 @@ public class SpikeController : MonoBehaviour
     void ActiveSpikeOverTime()
     {
         activeSpike1[activeSpikeIndex].SetActive(true);
-        Debug.Log("Rodou 1 vez");
         activeSpike1.Remove(activeSpike1[activeSpikeIndex]);
         activeSpikeIndex = Random.Range(0, activeSpike1.Count);
          

@@ -51,9 +51,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag == "Spikes")
         {
             LivesManager.lives -= 1;
-        }
-
-        
+        }        
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -61,6 +59,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag == "SlowSpike")
         {
             powerUpActive = true;
+            Debug.Log(powerUpActive);
             Destroy(collision.gameObject);
         }
 

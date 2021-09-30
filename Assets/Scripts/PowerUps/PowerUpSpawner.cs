@@ -20,7 +20,7 @@ public class PowerUpSpawner : MonoBehaviour
             startedPosition[x] = activePowerUp[x].transform.position;
         }
 
-        InvokeRepeating("ActivePowerOverTime", 5f, 5f);//need balance
+        InvokeRepeating("ActivePowerOverTime", 6f, 6f);//need balance
 
         //startedPosition = activePowerUp[powerUpIndex].transform.position;
     }
@@ -29,7 +29,6 @@ public class PowerUpSpawner : MonoBehaviour
     {
         activePowerUp[powerUpIndex].SetActive(true);
         Instantiate(activePowerUp[powerUpIndex], startedPosition[powerUpIndex], transform.rotation);
-        Debug.Log("Rodou 1 vez");
         powerUpIndex = Random.Range(0, activePowerUp.Count);
         
     }
