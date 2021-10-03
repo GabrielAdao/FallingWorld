@@ -6,6 +6,13 @@ public class PowerUpController : MonoBehaviour
 {
     public static bool isActive = false;
 
-    public Rigidbody2D Rigidbody2D => GetComponent<Rigidbody2D>();
+    public PlayerMove playerMove;
 
+    public IEnumerator SlowSpikePowerUp()
+    {
+        print("Entrou");
+        yield return new WaitForSeconds(5);
+        playerMove.powerUpActive = false;
+        print("Saiu");
+    }
 }

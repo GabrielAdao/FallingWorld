@@ -10,21 +10,26 @@ public class PlayerMove : MonoBehaviour
     public bool barrierPowerUpActive = false;
 
     public PlayerController controller;
+    public PowerUpController powerUpController;
     public GameObject barrierPrefab;
     public Vector2 newPosition;
 
     private void Awake()
     {
         controller = GetComponent<PlayerController>();
+        powerUpController = GetComponent<PowerUpController>();
     }
 
     private void Start()
     {
         newPosition += new Vector2(5, 0);
+        
+
     }
 
     void Update()
     {
+        controller.Rigidbody2.velocity = new Vector2(speed, 0);
         //Left click mouse change direction and flip the image
         if (Input.GetMouseButtonDown(0))
         {
@@ -33,9 +38,6 @@ public class PlayerMove : MonoBehaviour
             controller.SpriteRenderer.flipX = _flipX;
         }
 
-        controller.Rigidbody2.velocity = new Vector2(speed, 0);
-
-
         if (barrierPowerUpActive == true)
         {
             GetComponent<PlayerMove>().barrierPrefab.SetActive(true);
@@ -43,6 +45,11 @@ public class PlayerMove : MonoBehaviour
         else
         {
             GetComponent<PlayerMove>().barrierPrefab.SetActive(false);
+        }
+
+        if(powerUpActive == true)
+        {
+            powerUpController.StartCoroutine(powerUpController.SlowSpikePowerUp());
         }
     }
 
@@ -59,7 +66,6 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag == "SlowSpike")
         {
             powerUpActive = true;
-            Debug.Log(powerUpActive);
             Destroy(collision.gameObject);
         }
 
