@@ -8,6 +8,7 @@ public class PlayerMove : MonoBehaviour
     public bool _flipX;
     public bool powerUpActive = false;
     public bool barrierPowerUpActive = false;
+    public bool slowPowerUpActive = false;
 
     public PlayerController controller;
     public PowerUpController powerUpController;
@@ -47,8 +48,9 @@ public class PlayerMove : MonoBehaviour
             GetComponent<PlayerMove>().barrierPrefab.SetActive(false);
         }
 
-        if(powerUpActive == true)
+        if(powerUpActive == true && slowPowerUpActive == false)
         {
+            slowPowerUpActive = true;
             powerUpController.StartCoroutine(powerUpController.SlowSpikePowerUp());
         }
     }
@@ -66,6 +68,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag == "SlowSpike")
         {
             powerUpActive = true;
+            slowPowerUpActive = false;
             Destroy(collision.gameObject);
         }
 

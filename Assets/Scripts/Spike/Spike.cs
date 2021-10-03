@@ -17,8 +17,6 @@ public class Spike : MonoBehaviour
 
     public int spikeSpeedSlowed = 1;
 
-
-
     private void Awake()
     {
         powerUpController = GetComponent<PowerUpController>(); 
