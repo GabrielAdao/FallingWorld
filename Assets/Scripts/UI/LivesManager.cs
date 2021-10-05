@@ -14,7 +14,7 @@ public class LivesManager : MonoBehaviour
         
         text = GetComponent<Text>();
 
-        lives = 3999;
+        lives = 3;
     }
 
     private void Update() {

@@ -10,6 +10,7 @@ TagManager:
   - SlowSpike
   - Barrier
   - ExtraLife
+  - SideSpikes
   layers:
   - Default
   - TransparentFX

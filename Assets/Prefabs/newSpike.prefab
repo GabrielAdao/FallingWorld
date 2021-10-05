@@ -13,7 +13,6 @@ GameObject:
   - component: {fileID: 5878251820533876234}
   - component: {fileID: 5878251820533876235}
   - component: {fileID: 5878251820533876232}
-  - component: {fileID: 5878251820533876233}
   m_Layer: 0
   m_Name: newSpike
   m_TagString: Spikes
@@ -145,22 +144,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   spikePosition: {x: 0, y: 0}
   spikePrefab: {fileID: 5878251820533876230}
-  rb2: {fileID: 0}
+  rb2: {fileID: 5878251820533876234}
   vel: {x: 0, y: 0}
-  powerUpController: {fileID: 5878251820533876233}
+  powerUpController: {fileID: 0}
   playerMove: {fileID: 0}
   isSlowed: 0
-  timeRemaining: 5
   spikeSpeed: 0
---- !u!114 &5878251820533876233
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5878251820533876230}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5561a91bc77d38145ac19fe6f3c8550a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
+  spikeSpeedSlowed: 1
