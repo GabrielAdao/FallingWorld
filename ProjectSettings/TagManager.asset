@@ -11,6 +11,7 @@ TagManager:
   - Barrier
   - ExtraLife
   - SideSpikes
+  - CircleBarrier
   layers:
   - Default
   - TransparentFX

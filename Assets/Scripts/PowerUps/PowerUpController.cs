@@ -10,9 +10,7 @@ public class PowerUpController : MonoBehaviour
 
     public IEnumerator SlowSpikePowerUp()
     {
-        print("Entrou");
         yield return new WaitForSeconds(5);
         playerMove.powerUpActive = false;
-        print("Saiu");
     }
 }

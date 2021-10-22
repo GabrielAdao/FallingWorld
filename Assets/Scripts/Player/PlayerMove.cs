@@ -24,8 +24,6 @@ public class PlayerMove : MonoBehaviour
     private void Start()
     {
         newPosition += new Vector2(5, 0);
-        
-
     }
 
     void Update()
@@ -39,13 +37,13 @@ public class PlayerMove : MonoBehaviour
             controller.SpriteRenderer.flipX = _flipX;
         }
 
-        if (barrierPowerUpActive == true)
+        if (barrierPowerUpActive == false)
         {
-            GetComponent<PlayerMove>().barrierPrefab.SetActive(true);
+            GetComponent<PlayerMove>().barrierPrefab.SetActive(false);
         }
         else
         {
-            GetComponent<PlayerMove>().barrierPrefab.SetActive(false);
+            GetComponent<PlayerMove>().barrierPrefab.SetActive(true);
         }
 
         if(powerUpActive == true && slowPowerUpActive == false)
@@ -60,7 +58,7 @@ public class PlayerMove : MonoBehaviour
         if (collision.gameObject.tag == "Spikes")
         {
             LivesManager.lives -= 1;
-        }        
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class PowerUpSpawner : MonoBehaviour
 {
-
     public List<GameObject> activePowerUp = new List<GameObject>();
     public int powerUpIndex;
 

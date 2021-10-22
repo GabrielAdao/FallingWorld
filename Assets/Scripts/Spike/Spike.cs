@@ -21,7 +21,6 @@ public class Spike : MonoBehaviour
     {
         powerUpController = GetComponent<PowerUpController>(); 
     }
-
     void Start()
     {
         spikePosition = transform.position;
@@ -47,12 +46,16 @@ public class Spike : MonoBehaviour
             ScoreController.score += 1;
             Destroy(gameObject);
         }
+    }
 
-        if (other.gameObject.CompareTag("Barrier"))
+    void OnTriggerEnter2D(Collider2D collision)
+    {
+        if (collision.gameObject.CompareTag("CircleBarrier") )
         {
-            Instantiate(spikePrefab, spikePosition, transform.localRotation);
             playerMove.barrierPowerUpActive = false;
-            Destroy(gameObject);   
+            Instantiate(spikePrefab, spikePosition, transform.localRotation);
+            Destroy(gameObject);
         }
+
     }
 }
