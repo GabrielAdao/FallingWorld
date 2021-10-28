@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/_Scenes/Start.unity
     guid: 7f36dce8e34972c419c5de16c0dee1ae
   - enabled: 1
-    path: Assets/_Scenes/Main.unity
+    path: Assets/_Scenes/Gameplay.unity
     guid: b33832531ed003e49b29e5610bf641cb
   - enabled: 1
     path: Assets/_Scenes/GameOver.unity
